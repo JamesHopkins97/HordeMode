@@ -24,10 +24,12 @@ public class GunController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(GunShooting);
         if (GunShooting)
         {
             NewBullet = Instantiate(bullet, transform.position, transform.rotation);
             NewBullet.AddForce(transform.TransformDirection(Vector3.forward * 1000));
+            Debug.Log(NewBullet.transform.position);
 
             GunShooting = false;
         }
